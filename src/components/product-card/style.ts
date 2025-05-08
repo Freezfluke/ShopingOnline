@@ -1,36 +1,40 @@
 import {StyleSheet} from 'react-native';
-
+import {normalize} from '../../function/normalize';
 
 export const styles = StyleSheet.create({
   card: {
     flex: 1,
-    margin: 8,
+    display: 'flex',
+    margin: normalize({size: 8}),
     backgroundColor: '#fff',
-    borderRadius: 8,
-    elevation: 2,
+    borderRadius: normalize({size: 8}),
+    elevation: normalize({size: 2}),
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowOpacity: normalize({size: 0.1}),
+    shadowRadius: normalize({size: 4}),
   },
   image: {
     width: '100%',
-    height: 200,
-    borderTopLeftRadius: 8,
-    borderTopRightRadius: 8,
+    height: normalize({size: 200}),
+    borderTopLeftRadius: normalize({size: 8}),
+    borderTopRightRadius: normalize({size: 8}),
   },
   infoContainer: {
-    padding: 8,
+    flex: 1,
+    display: 'flex',
+    justifyContent: 'flex-end',
+    padding: normalize({size: 8}),
   },
   name: {
-    fontSize: 16,
+    fontSize: normalize({size: 16}),
     fontWeight: 'bold',
-    marginBottom: 4,
+    marginBottom: normalize({size: 4}),
   },
   desc: {
-    fontSize: 14,
+    fontSize: normalize({size: 14}),
     color: '#555',
-    marginBottom: 8,
+    marginBottom: normalize({size: 8}),
   },
   priceAndRating: {
     flexDirection: 'row',
@@ -38,7 +42,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   price: {
-    fontSize: 16,
+    fontSize: normalize({size: 16}),
     fontWeight: 'bold',
     color: '#000',
   },
@@ -47,8 +51,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   ratingText: {
-    marginLeft: 4,
-    fontSize: 12,
+    marginLeft: normalize({size: 4}),
+    fontSize: normalize({size: 12}),
     color: '#555',
   },
   favoriteButton: {
