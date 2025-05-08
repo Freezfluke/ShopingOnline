@@ -7,6 +7,7 @@ import {updateQuantity} from '../../redux/product/product-slice';
 import {Product} from '../../redux/product/product-types';
 import withRouteWrapper from '../../components/hoc/WrapperComponent';
 import {styles} from './style';
+import { MemorizedEmptyScreen } from '../../components/empty';
 
 const Cart = () => {
   const dispatch = useAppDispatch();
@@ -77,6 +78,7 @@ const Cart = () => {
         renderItem={renderItem}
         renderHiddenItem={renderHiddenItem}
         leftOpenValue={75}
+        ListEmptyComponent={<MemorizedEmptyScreen />}
       />
       {totalPrice > 0 && (
         <View style={styles.totalBar}>

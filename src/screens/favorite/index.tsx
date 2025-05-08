@@ -12,6 +12,7 @@ import {RouteName} from '../../navigation/constants/route-name';
 import {useToast} from 'react-native-toast-notifications';
 import {Product} from '../../redux/product/product-types';
 import {FlatList} from 'react-native';
+import { MemorizedEmptyScreen } from '../../components/empty';
 
 type FavoriteScreenNavigationProp = NativeStackNavigationProp<
   any,
@@ -38,6 +39,7 @@ function Favorite({navigation}: Props) {
         data={productFavourite.items}
         numColumns={2}
         keyExtractor={item => item.id.toString()}
+        ListEmptyComponent={<MemorizedEmptyScreen />}
         renderItem={({item}) => {
           return (
             <MemorizedProductCard
