@@ -29,12 +29,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
   isFa,
   onCartPress,
   onFavoritePress,
+  onPressDetailProduct,
 }) => {
   return (
-    <View style={styles.card}>
-      <TouchableOpacity
-        style={styles.cartIcon}
-        onPress={() => onCartPress()}>
+    <TouchableOpacity onPress={onPressDetailProduct} style={styles.card}>
+      <TouchableOpacity style={styles.cartIcon} onPress={() => onCartPress()}>
         <Ionicons
           name={isCart ? 'cart' : 'cart-outline'}
           size={24}
@@ -64,7 +63,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
