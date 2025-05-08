@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: normalize({size: 10}),
-    marginBottom: normalize({size: 40}),
+    marginBottom: normalize({size: 20}),
     borderRadius: normalize({size: 50}),
     width: '95%',
     alignSelf: 'center',

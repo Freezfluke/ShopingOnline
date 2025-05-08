@@ -1,11 +1,12 @@
 // Home.tsx
 import React, {Fragment} from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList} from 'react-native';
 import {RouteName} from '../../navigation/constants/route-name';
 import withRouteWrapper from '../../components/hoc/WrapperComponent';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {MemorizedHeader} from './view/header';
 import {MemorizedProductCard} from '../../components/product-card';
+import {MemorizedSearchBar} from '../../components/search';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   any,
@@ -20,7 +21,7 @@ function Home({navigation}: Props): React.JSX.Element {
   return (
     <Fragment>
       <MemorizedHeader />
-
+      <MemorizedSearchBar value="" onChange={() => {}} />
       <FlatList
         data={[
           {
@@ -118,6 +119,7 @@ function Home({navigation}: Props): React.JSX.Element {
         renderItem={({item}) => {
           return (
             <MemorizedProductCard
+              onFavoritePress={() => {}}
               id={item.id}
               name={item.name}
               desc={item.desc}
