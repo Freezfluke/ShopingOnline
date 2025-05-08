@@ -68,6 +68,7 @@ function Home({navigation}: Props): React.JSX.Element {
                   rating: item.rating,
                   isCart: item.isCart,
                   isFa: item.isFa,
+                  quantity: 1,
                 })
               }
               id={item.id}

@@ -12,4 +12,5 @@ export interface Product {
   rating: Rating;
   isFa: boolean;
   isCart: boolean;
+  quantity?: number
 }

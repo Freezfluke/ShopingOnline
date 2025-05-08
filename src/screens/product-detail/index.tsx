@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {View, Text,  TouchableOpacity} from 'react-native';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import withRouteWrapper from '../../components/hoc/WrapperComponent';
 import {MemorizedHeader} from '../../components/header/header';
@@ -16,6 +16,7 @@ import {styles} from './style';
 import {useAppSelector} from '../../store/store';
 import {Product} from '../../redux/product/product-types';
 import {useToast} from 'react-native-toast-notifications';
+import {MemorizedProductDetail} from '../../components/product-detail';
 
 type ProductDetailScreenNavigationProp = NativeStackNavigationProp<
   any,
@@ -49,6 +50,7 @@ function ProductDetail({navigation}: Props) {
         rating: {rate: 0, count: 0},
         isFa: false,
         isCart: false,
+        quantity: 0,
       }
     );
   }, [product.items, productRoute]);
@@ -59,7 +61,6 @@ function ProductDetail({navigation}: Props) {
   };
 
   const handleCart = () => {
-
     dispatch(toggleCart(produceDetail));
     toast.show('ทำรายการสำเร็จ', {type: 'success', placement: 'top'});
   };
@@ -72,24 +73,8 @@ function ProductDetail({navigation}: Props) {
         onBackPress={() => navigation.goBack()}
         onFavoritePress={handleFavorite}
       />
+      <MemorizedProductDetail produceDetail={produceDetail} />
 
-      <ScrollView>
-        <View style={styles.imageContainer}>
-          <Image source={{uri: produceDetail.image}} style={styles.image} />
-        </View>
-
-        <View style={styles.content}>
-          <Text style={styles.name}>{produceDetail.name}</Text>
-          <Text style={styles.price}>
-            {produceDetail.price.toLocaleString()} บาท
-          </Text>
-          <Text style={styles.rating}>
-            คะแนน: {produceDetail.rating.rate} ({produceDetail.rating.count}{' '}
-            รีวิว)
-          </Text>
-          <Text style={styles.desc}>{produceDetail.desc}</Text>
-        </View>
-      </ScrollView>
       <TouchableOpacity style={styles.cartBtn} onPress={handleCart}>
         <Ionicons
           name={produceDetail.isCart ? 'cart' : 'cart-outline'}
