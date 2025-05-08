@@ -3,9 +3,9 @@ import {normalize} from '../../function/normalize';
 
 export const styles = StyleSheet.create({
   card: {
-    flex: 1,
-    display: 'flex',
-    margin: normalize({size: 5}),
+    marginVertical: 3.5,
+    marginHorizontal: 2,
+    width: '49%',
     backgroundColor: '#fff',
     borderRadius: normalize({size: 4}),
     elevation: normalize({size: 2}),

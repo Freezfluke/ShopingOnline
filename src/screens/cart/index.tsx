@@ -78,11 +78,13 @@ const Cart = () => {
         renderHiddenItem={renderHiddenItem}
         leftOpenValue={75}
       />
-      <View style={styles.totalBar}>
-        <Text style={styles.totalText}>
-          รวมทั้งหมด: {totalPrice.toLocaleString()} บาท
-        </Text>
-      </View>
+      {totalPrice > 0 && (
+        <View style={styles.totalBar}>
+          <Text style={styles.totalText}>
+            รวมทั้งหมด: {totalPrice.toLocaleString()} บาท
+          </Text>
+        </View>
+      )}
     </Fragment>
   );
 };
