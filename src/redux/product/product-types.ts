@@ -10,4 +10,6 @@ export interface Product {
   image: string;
   price: number;
   rating: Rating;
+  isFa: boolean;
+  isCart: boolean;
 }

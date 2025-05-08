@@ -2,11 +2,14 @@ import {memo} from 'react';
 import {Text, View} from 'react-native';
 import {styles} from '../style';
 
-function Header() {
-  return (
+interface HeaderProps {
+  count: number;
+}
 
+function Header({count}: HeaderProps) {
+  return (
     <View style={styles.container}>
-      <Text style={styles.textNumber}>20</Text>
+      <Text style={styles.textNumber}>{count}</Text>
       <Text style={styles.textEditor}>New Arrivals</Text>
     </View>
   );
