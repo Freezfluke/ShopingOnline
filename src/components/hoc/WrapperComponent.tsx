@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StatusBar, View} from 'react-native';
 import {styles} from './styles';
-// import { LoadingComponent } from '../loading';
 
 const withRouteWrapper = <P extends object>(routeName: string) => {
   return (WrappedComponent: any) => {
@@ -16,7 +15,6 @@ const withRouteWrapper = <P extends object>(routeName: string) => {
 
       return (
         <SafeAreaView style={styles.wrapper}>
-          {/* <LoadingComponent /> */}
           <StatusBar
             barStyle="dark-content"
             translucent
