@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     margin: normalize({size: 10}),
     paddingHorizontal: normalize({size: 15}),
-    paddingVertical: normalize({size: 18}),
+    paddingVertical: normalize({size: 12}),
     borderRadius: normalize({size: 20}),
     elevation: normalize({size: 3}),
   },
