@@ -33,6 +33,10 @@ const BottomTabNavigator: React.FC = () => {
         tabBarInactiveTintColor: 'gray',
         headerShown: false,
         tabBarLabelStyle: {display: 'none'},
+        tabBarItemStyle: {
+          justifyContent: 'center',
+          alignItems: 'center',
+        },
       })}>
       <Tab.Screen name={RouteName.Home} component={Home} />
       <Tab.Screen name={RouteName.Cart} component={CartScreen} />

@@ -8,10 +8,10 @@ export const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     zIndex: 1,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.bgColor,
   },
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.bgColor,
   },
 });

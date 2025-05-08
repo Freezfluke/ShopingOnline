@@ -4,14 +4,16 @@ import {Colors} from '../../assets/colors';
 
 export const styles = StyleSheet.create({
   tabbar: {
-    height: normalize({size: 70}),
-    paddingBottom: normalize({size: 10}),
-    paddingTop: normalize({size: 5}),
+    height: normalize({size: 60}),
     backgroundColor: Colors.white,
-    position: 'absolute',
-    marginHorizontal: normalize({size: 16}),
-    marginBottom: normalize({size: 10}),
-    width: '90%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: normalize({size: 10}),
+    marginBottom: normalize({size: 40}),
+    borderRadius: normalize({size: 50}),
+    width: '95%',
     alignSelf: 'center',
   },
 });
