@@ -34,8 +34,7 @@ const BottomTabNavigator: React.FC = () => {
         headerShown: false,
         tabBarLabelStyle: {display: 'none'},
         tabBarItemStyle: {
-          justifyContent: 'center',
-          alignItems: 'center',
+        marginVertical:10
         },
       })}>
       <Tab.Screen name={RouteName.Home} component={Home} />
