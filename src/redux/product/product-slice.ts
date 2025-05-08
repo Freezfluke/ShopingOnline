@@ -3,6 +3,7 @@ import {loadProducts} from './product-thunk';
 import {Product} from './product-types';
 import {RootState} from '../../store/store';
 
+
 interface ProductsState {
   loadingCount: number;
   product: {
@@ -30,6 +31,7 @@ const initialState: ProductsState = {
     items: [],
   },
 };
+
 
 const productsSlice = createSlice({
   name: 'products',
@@ -76,6 +78,7 @@ const productsSlice = createSlice({
         };
 
         if (isAlreadyCart) {
+          
           state.productCart.items.splice(cartIndex, 1);
         } else {
           state.productCart.items.push(action.payload);

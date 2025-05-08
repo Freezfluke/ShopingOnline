@@ -33,10 +33,12 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   image: {
+    
     width: '100%',
     height: normalize({size: 200}),
     borderTopLeftRadius: normalize({size: 8}),
     borderTopRightRadius: normalize({size: 8}),
+  
   },
   infoContainer: {
     flex: 1,

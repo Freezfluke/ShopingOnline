@@ -40,7 +40,11 @@ function Home({navigation}: Props): React.JSX.Element {
           return (
             <MemorizedProductCard
               onPressDetailProduct={() =>
-                navigation.push(RouteName.ProductDetail)
+                navigation.push(RouteName.ProductDetail, {
+                  product: {
+                    id: item.id,
+                  },
+                })
               }
               onFavoritePress={() =>
                 onFavoritePress({

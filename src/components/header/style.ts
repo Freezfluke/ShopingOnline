@@ -3,7 +3,8 @@ import {normalize} from '../../function/normalize';
 
 export const styles = StyleSheet.create({
   container: {
-    height: normalize({size: 40}),
+    borderRadius: normalize({size: 50}),
+    height: normalize({size: 45}),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
