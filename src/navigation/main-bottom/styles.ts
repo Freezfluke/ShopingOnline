@@ -9,5 +9,6 @@ export const styles = StyleSheet.create({
     marginBottom: normalize({size: 20}),
     borderRadius: normalize({size: 50}),
     width: '95%',
+    alignSelf: 'center',
   },
 });

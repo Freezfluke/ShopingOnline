@@ -2,12 +2,11 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {MemoizedBottomTab} from '../navigation-function';
 import {Colors} from '../../assets/colors';
-import { styles } from './styles';
 import CartScreen from '../../screens/cart';
 import FavoriteScreen from '../../screens/favorite';
-import { RouteName } from '../constants/route-name';
+import {RouteName} from '../constants/route-name';
 import Home from '../../screens/home';
-
+import {styles} from './styles';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,7 +33,7 @@ const BottomTabNavigator: React.FC = () => {
         headerShown: false,
         tabBarLabelStyle: {display: 'none'},
         tabBarItemStyle: {
-        marginVertical:10
+          marginVertical: 10,
         },
       })}>
       <Tab.Screen name={RouteName.Home} component={Home} />
