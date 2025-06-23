@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from 'react';
+import {useCallback, useEffect, useMemo, useState} from 'react';
 import {useAppDispatch, useAppSelector} from '../../../store/store';
 import {loadProducts} from '../../../redux/product/product-thunk';
 import {Product} from '../../../redux/product/product-types';
@@ -11,7 +11,7 @@ import {useToast} from 'react-native-toast-notifications';
 
 export const useFetchProducts = () => {
   const dispatch = useAppDispatch();
-  const {product} = useAppSelector(productSelector);
+  const {product ,loadingCount} = useAppSelector(productSelector);
   const [searchText, setSearchText] = useState('');
   const [debouncedText, setDebouncedText] = useState('');
   const toast = useToast();
@@ -36,6 +36,11 @@ export const useFetchProducts = () => {
     dispatch(loadProducts());
   }, [dispatch]);
 
+  const pullRe =  useCallback(() => {
+    console.log('print');
+    dispatch(loadProducts());
+  }, [dispatch])
+
   const onFavoritePress = (item: Product) => {
     dispatch(toggleFavorite(item));
     toast.show('ทำรายการสำเร็จ', {type: 'success', placement: 'top'});
@@ -53,5 +58,7 @@ export const useFetchProducts = () => {
     items: product.items,
     onFavoritePress,
     onCartPress,
+    pullRe,
+    loadingCount
   };
 };

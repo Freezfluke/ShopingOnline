@@ -27,7 +27,11 @@ function Home({navigation}: Props): React.JSX.Element {
     items,
     onFavoritePress,
     onCartPress,
+    pullRe,
+    loadingCount,
   } = useFetchProducts();
+
+  
 
   return (
     <Fragment>
@@ -35,6 +39,8 @@ function Home({navigation}: Props): React.JSX.Element {
       <MemorizedSearchBar value={searchText} onChange={setSearchText} />
 
       <FlatList
+        refreshing={loadingCount > 1 }
+        onRefresh={pullRe}
         data={filteredProducts}
         numColumns={2}
         keyExtractor={item => item.id.toString()}
